@@ -8,11 +8,39 @@
             var robotArm = new RobotArm(canvas);
             
             // Het level inladen
-            robotArm.loadLevel("exercise 1");
+            robotArm.loadLevel("exercise 6");
+
+            //function die instructies versimpelt
+            function move(ammount, left, grab){
+                for(i = 0; i < ammount; i++){
+                    if(left == true){
+                        robotArm.moveLeft();
+                    }else if(left == false){
+                        robotArm.moveRight();
+                    }else{
+                        alert("Wrong input");
+                    }
+                }
+                if(grab == true){
+                    robotArm.grab();
+                }else if(grab == false){
+                    robotArm.drop();
+                }else{
+                    alert("Wrong input");
+                }
+            }
             
             // Jou instructies volgen hier
-            robotArm.moveRight();
-            robotArm.moveRight();
+            for(i = 1; i <= 6; i++){
+                robotArm.moveRight();
+            }
+            move(1, false, true);
+            for(j = 1; j <= 7; j++){
+                move(1, false, false);
+                move(2, true, true);
+            }
+            move(1, false, false);
+            robotArm.moveLeft();
             
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
