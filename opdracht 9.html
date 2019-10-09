@@ -6,14 +6,55 @@
             // Robotarm bibliotheek inladen
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
+            robotArm.speed=100;
             
             // Het level inladen
-            robotArm.loadLevel("exercise 1");
+            robotArm.loadLevel("exercise 9");
             
             // Jou instructies volgen hier
-            robotArm.moveRight();
-            robotArm.moveRight();
+            // for(var x = 1; x<=4; x++){
+            //     for(var i = 1; i <=4; i++){
+            //         robotArm.grab();
+            //         for(var j = 1; j<=5; j++){
+            //             robotArm.moveRight();
+            //         }
+            //         robotArm.drop();
+            //         for(var j = 1; j<=4; j++){
+            //             robotArm.moveLeft();
+            //         }
+            //     }
+            //     for( var y = 1; y<=8; y++){
+            //         robotArm.moveLeft();
+            //     }
+            // }
             
+            // for(var i = 1; i <= 4; i++){
+            //     for(var j = 1; j<=5; j++){
+            //         robotArm.grab();
+            //         for(var x = 1; x<=5; x++){
+            //             robotArm.moveRight();
+            //         }
+            //         robotArm.drop();
+            //         for(var k = 1; k<=5-i; k++){
+            //             robotArm.moveLeft();
+            //         }
+            //     }
+            // }
+            for( var column = 1; column<=4; column++){
+                for(var block = 0; block<column; block++){
+                    robotArm.grab();
+                    for(var right = 0; right<5; right++){
+                        robotArm.moveRight();
+                    }
+                    robotArm.drop();
+                    for(var left = 0; left<5; left++){
+                        robotArm.moveLeft();
+                    }
+                }
+                robotArm.moveRight();
+            }
+
+
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
