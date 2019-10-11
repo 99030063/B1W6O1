@@ -12,19 +12,19 @@
             robotArm.loadLevel("exercise 11");
 
             // Jou instructies volgen hier
-            for(var i = 9; i>=1; i--){
-                for(var j = 1; j<=9; j++){
-                    robotArm.moveRight();
-
-                }
-                robotArm.grab()
+            for(var j = 1; j<=9; j++){
+                 robotArm.moveRight();
+            }
+            for(var column = 9; column >=1; column --){
+                robotArm.grab();
                 if(robotArm.scan() == "white"){
                     robotArm.moveRight();
                     robotArm.drop();
+                    robotArm.moveLeft();
                 }else{
                     robotArm.drop();
-                    robotArm.moveLeft();
                 }
+                robotArm.moveLeft();
             }
             
             

@@ -393,7 +393,8 @@ var RobotArm = function (canvas) {
                     ["blue"],
                     ["green", "green"],
                     ["white", "white", "white"],
-                    ["red", "red", "red", "red"]
+                    ["red", "red", "red", "red"],
+                    // ["blue", "blue", "blue", "blue", "blue"]
                 ]);
                 break;
             case "exercise 10":
