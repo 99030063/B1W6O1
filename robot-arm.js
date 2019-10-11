@@ -42,7 +42,7 @@ var RobotArm = function (canvas) {
 
     // Handles the blocks
     local.blocks = {};
-    local.blocks.availableColors = ["red", "blue", "green", "white"];
+    local.blocks.availableColors = ["red", "blue", "green", "white", "yellow", "pink", "purple"];
     local.blocks.map = null;
     local.blocks.held = null;
     
