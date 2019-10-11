@@ -15,7 +15,7 @@
             for(var column = 1; column <=9; column ++){
                 robotArm.grab();
                 console.log(robotArm.scan())
-                if(robotArm.scan() == "white", "red", "blue", "green" && robotArm.scan() !== null){
+                if(robotArm.scan() !== null){
                     for(right = 1; right<=column; right ++){
                     robotArm.moveRight();
                     }
