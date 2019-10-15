@@ -26,40 +26,23 @@
                 }
                 robotArm.moveRight();
             }
-
             for(replace=1; replace<=3; replace++){
                 robotArm.moveRight();
             }
-            // for(var x = 1; x<=4; x++){
-                for(var i = 1; i <=4; i++){
+            for(var ammount = 4; ammount>=1; ammount --){
+                for(var grab = 1; grab<=ammount; grab ++){
                     robotArm.grab();
-                    for(var j = 1; j<=4; j++){
+                    for(var left = 1; left<=grab+3; left ++){
                         robotArm.moveLeft();
                     }
                     robotArm.drop();
-                    for(var k = 1; k<=3; k++){
+                    for(var right = 1; right<=grab+3; right ++){
                         robotArm.moveRight();
                     }
                 }
-                for( var y = 1; y<=8; y++){
-                    robotArm.moveLeft();
-                }
+                robotArm.moveLeft();
+            }
             
-
-
-            // for(var column = 4; column>=1; column--){
-            //     for(var block = 0; block<column; block++){
-            //         robotArm.grab();
-            //         for(var left = 0; left<5; left++){
-            //             robotArm.moveLeft();
-            //         }
-            //         robotArm.drop();
-            //         for(var right = 0; right<5; right++){
-            //             robotArm.moveRight();
-            //         }
-            //     }
-            //     robotArm.moveLeft();
-            // }
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
