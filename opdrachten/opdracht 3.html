@@ -1,16 +1,16 @@
 <html>
     <body>
         <canvas id="canvas" width="800" height="600"></canvas>
-        <script src="./robot-arm.js"></script>
+        <script src="../robot-arm.js"></script>
         <script>
             // Robotarm bibliotheek inladen
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
-            robotArm.speed=2000;
+            robotArm.speed=300;
             
             // Het level inladen
-            robotArm.loadLevel("exercise 6");
-
+            robotArm.loadLevel("exercise 3");
+            
             //function die instructies versimpelt
             function move(ammount, left, grab){
                 for(var i = 0; i < ammount; i++){
@@ -30,19 +30,17 @@
                     alert("Wrong input");
                 }
             }
-            
+        
             // Jou instructies volgen hier
-            for(var i = 1; i <= 6; i++){
+            for(var i=1; i<=4; i++){
+                robotArm.grab();
                 robotArm.moveRight();
+                robotArm.drop();
+                robotArm.moveLeft();
             }
-            move(1, false, true);
-            for(var i = 1; i <= 7; i++){
-                move(1, false, false);
-                move(2, true, true);
-            }
-            move(1, false, false);
-            robotArm.moveLeft();
             
+
+
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
