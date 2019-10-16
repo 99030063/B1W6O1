@@ -7,7 +7,7 @@
             // Robotarm bibliotheek inladen
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
-            robotArm.speed = 0;
+            robotArm.speed = 100;
             
             // Het level inladen
             robotArm.randomLevel(4);
@@ -68,7 +68,7 @@
                     robotArm.drop();
                     currentColumn == 2 ? robotArm.moveRight() : robotArm.moveLeft();
                     currentColumn == 2 ? robotArm.moveRight() : robotArm.moveLeft();
-                    currentColumn == 2 ? robotArm.grab() : "";
+                    q < column[currentColumn] - 1 ? robotArm.grab() : "";
                 }
                 for(var x = 1; x<=3; x++){
                     currentColumn == 2 ? robotArm.moveLeft(): "";
